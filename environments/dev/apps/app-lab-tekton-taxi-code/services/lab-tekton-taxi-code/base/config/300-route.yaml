@@ -1,0 +1,14 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  name: lab-tekton-taxi-code
+  namespace: dev
+spec:
+  port:
+    targetPort: 8080
+  to:
+    kind: Service
+    name: lab-tekton-taxi-code
+    weight: 100
+  wildcardPolicy: None

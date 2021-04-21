@@ -1,0 +1,4 @@
+bases:
+- overlays
+commonLabels:
+  app.openshift.io/vcs-source: lcolagio/lab-tekton-taxi-gitops-2

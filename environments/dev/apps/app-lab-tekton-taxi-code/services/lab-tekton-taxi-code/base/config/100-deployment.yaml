@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/name: lab-tekton-taxi-code
+    app.kubernetes.io/part-of: app-lab-tekton-taxi-code
+  name: lab-tekton-taxi-code
+  namespace: dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: lab-tekton-taxi-code
+      app.kubernetes.io/part-of: app-lab-tekton-taxi-code
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app.kubernetes.io/name: lab-tekton-taxi-code
+        app.kubernetes.io/part-of: app-lab-tekton-taxi-code
+    spec:
+      containers:
+      - image: nginxinc/nginx-unprivileged:latest
+        imagePullPolicy: Always
+        name: lab-tekton-taxi-code
+        ports:
+        - containerPort: 8080
+        resources: {}
+      serviceAccountName: default
+status: {}
